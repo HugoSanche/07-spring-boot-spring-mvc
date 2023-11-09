@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Thymeleaf Demo</title>
-    <!-- reference css file -->
-    <link rel="stylesheet"
-          th:href="@{/css/demo.css}"/>
+
 </head>
 <body>
-    <p th:text="'Time on the server is '+${theDate}" class="mycss"/>
+Hello Word of String
+<br>
+<br>
+
+Student name:<span th:text="${param.studentName}"/>
+<br>
+<br>
+The Messag: <span th:text="${message}"/>
 </body>
 </html>
 
