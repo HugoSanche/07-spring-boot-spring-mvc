@@ -3,9 +3,7 @@ package com.myproyects.springboot.thymeleafdemo.controller;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class DemoController {
@@ -22,7 +20,7 @@ public class DemoController {
     //need a controller method to process the HTML form
 
     //file helloword.html .- th:action="@{/processForm}"
-    @RequestMapping("/processForm")
+    @GetMapping("/processForm")
     public String processForm(){
         return "helloword";
     }
@@ -46,7 +44,7 @@ public class DemoController {
 
         return "helloword";
     }
-    @RequestMapping("/processFormVersionThree")
+    @PostMapping ("/processFormVersionThree")
     public String processFormVersionThree(@RequestParam ("studentName") String theName, Model model){
 
         //convert the data to all caps
@@ -60,8 +58,6 @@ public class DemoController {
 
         return "helloword";
     }
-
-
 
 }
 
